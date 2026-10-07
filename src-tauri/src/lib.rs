@@ -364,6 +364,17 @@ fn clear_recent(app: AppHandle, state: State<'_, AppState>) {
     store_recent(&app, &[]);
 }
 
+/// How this copy was installed ("deb", "appimage", …), or None for a plain
+/// binary (e.g. a local build), which can't update itself in place.
+#[tauri::command]
+fn install_kind() -> Option<String> {
+    if let Some(kind) = tauri::utils::platform::bundle_type() {
+        return Some(kind.to_string());
+    }
+    // The AppImage runtime always sets APPIMAGE to the file the updater replaces.
+    std::env::var_os("APPIMAGE").map(|_| "appimage".to_string())
+}
+
 #[tauri::command]
 fn toggle_devtools(window: WebviewWindow) {
     if window.is_devtools_open() {
@@ -499,6 +510,7 @@ pub fn run() {
             add_recent,
             clear_recent,
             toggle_devtools,
+            install_kind,
             set_window_icon,
             export_pdf,
         ])

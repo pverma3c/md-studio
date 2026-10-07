@@ -47,6 +47,8 @@ export type UpdateInfo = {
   /** Release notes (Markdown), from the GitHub release body. */
   notes: string | null
   date: string | null
+  /** False for builds not installed from a package; they must be updated by hand. */
+  canInstall: boolean
 }
 
 export type UpdateProgress = {

@@ -1,6 +1,7 @@
 import {
   DownloadIcon,
   ExternalLinkIcon,
+  InfoIcon,
   Loader2Icon,
   RefreshCwIcon,
   RotateCwIcon,
@@ -99,6 +100,17 @@ export function UpdateDialog() {
           </ScrollArea>
         )}
 
+        {status === "available" && info && !info.canInstall && (
+          <Alert>
+            <InfoIcon />
+            <AlertTitle>This copy can't update itself</AlertTitle>
+            <AlertDescription>
+              It wasn't installed from a package (it's a local build), so get
+              the new version from the releases page.
+            </AlertDescription>
+          </Alert>
+        )}
+
         {status === "downloading" && (
           <div className="flex flex-col gap-2">
             <Progress value={percent ?? 0} />
@@ -130,10 +142,17 @@ export function UpdateDialog() {
               >
                 Later
               </Button>
-              <Button onClick={() => void installUpdate()}>
-                <DownloadIcon data-icon="inline-start" />
-                Download & Install
-              </Button>
+              {info?.canInstall ? (
+                <Button onClick={() => void installUpdate()}>
+                  <DownloadIcon data-icon="inline-start" />
+                  Download & Install
+                </Button>
+              ) : (
+                <Button onClick={() => api.openExternal(RELEASES_URL)}>
+                  <ExternalLinkIcon data-icon="inline-start" />
+                  Releases Page
+                </Button>
+              )}
             </>
           )}
           {status === "downloading" && (

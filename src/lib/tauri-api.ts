@@ -181,7 +181,9 @@ export const tauriApi: MdStudioApi = {
   async checkForUpdate(): Promise<UpdateInfo | null> {
     pendingUpdate = await check()
     if (!pendingUpdate) return null
+    const installKind = await invoke<string | null>("install_kind")
     return {
+      canInstall: installKind !== null,
       version: pendingUpdate.version,
       currentVersion: pendingUpdate.currentVersion,
       notes: pendingUpdate.body ?? null,
