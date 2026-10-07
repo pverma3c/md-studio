@@ -1,0 +1,44 @@
+/*
+ * "App UI" preview style. Elements are shadcn/ui components styled with
+ * Tailwind (see components/preview/app-components.tsx); this file only sets
+ * the root's type and vertical rhythm, which those classes read through the
+ * --app-* variables, plus markup no component renders (KaTeX output).
+ * Syntax colors are shared with the document style in markdown.css.
+ */
+.markdown-app {
+  --app-text: var(--preview-font-size, 16px);
+  --app-leading: 1.75;
+  --app-flow: calc(var(--app-text) * 1.5);
+  --app-heading-gap: calc(var(--app-text) * 2.5);
+  --app-item-gap: calc(var(--app-text) * 0.5);
+  font-family: var(--font-ui, ui-sans-serif, system-ui, sans-serif);
+  font-size: var(--app-text);
+  line-height: var(--app-leading);
+  color: var(--foreground);
+  overflow-wrap: break-word;
+}
+
+.markdown-app[data-density="compact"] {
+  --app-leading: 1.6;
+  --app-flow: calc(var(--app-text) * 1);
+  --app-heading-gap: calc(var(--app-text) * 1.75);
+  --app-item-gap: calc(var(--app-text) * 0.25);
+}
+
+.markdown-app[data-density="spacious"] {
+  --app-leading: 1.9;
+  --app-flow: calc(var(--app-text) * 2);
+  --app-heading-gap: calc(var(--app-text) * 3.25);
+  --app-item-gap: calc(var(--app-text) * 0.75);
+}
+
+.markdown-app[data-font="serif"] {
+  --app-text: calc(var(--preview-font-size, 16px) * 1.08);
+  font-family: var(--font-read-serif, "Iowan Old Style", Georgia, serif);
+}
+
+.markdown-app .katex-display {
+  padding: 0.2em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}

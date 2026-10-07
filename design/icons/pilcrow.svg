@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Pilcrow: the paragraph mark, for writing -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffa35c"/><stop offset="1" stop-color="#df3c27"/></linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.28"/></filter>
+  </defs>
+  <rect x="100" y="100" width="824" height="824" rx="190" fill="url(#bg)" filter="url(#sh)"/>
+  <rect x="101.5" y="101.5" width="821" height="821" rx="188.5" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="3"/>
+  <g transform="translate(16 18)" fill="#7a1d0c" fill-opacity=".35">
+    <path d="M480 296 A128 128 0 0 0 480 552 Z"/><rect x="480" y="296" width="192" height="58"/>
+    <path d="M480 296 H542 V701 A31 31 0 0 1 480 701 Z"/><path d="M610 296 H672 V701 A31 31 0 0 1 610 701 Z"/>
+  </g>
+  <g fill="#fff6ea">
+    <path d="M480 296 A128 128 0 0 0 480 552 Z"/><rect x="480" y="296" width="192" height="58"/>
+    <path d="M480 296 H542 V701 A31 31 0 0 1 480 701 Z"/><path d="M610 296 H672 V701 A31 31 0 0 1 610 701 Z"/>
+  </g>
+</svg>

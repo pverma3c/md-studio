@@ -1,0 +1,65 @@
+/*
+ * Palette for rendered markdown. Kept separate from the app tokens so that
+ * exported HTML can embed it verbatim; export.ts turns the `.dark` block into
+ * a prefers-color-scheme query. #print-root is always light (PDF export).
+ */
+:root,
+#print-root {
+  --md-bg: oklch(1 0 0);
+  --md-fg: oklch(0.2 0 0);
+  --md-muted: oklch(0.5 0 0);
+  --md-border: oklch(0.91 0 0);
+  --md-subtle: oklch(0.975 0 0);
+  --md-code-bg: oklch(0.965 0.002 260);
+  --md-code-fg: oklch(0.32 0.01 260);
+  --md-link: oklch(0.5 0.17 258);
+  --md-mark: oklch(0.94 0.09 95);
+  --md-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-7'/%3E%3C/svg%3E");
+  --md-note: oklch(0.55 0.16 258);
+  --md-tip: oklch(0.55 0.13 155);
+  --md-important: oklch(0.52 0.19 300);
+  --md-warning: oklch(0.62 0.14 70);
+  --md-caution: oklch(0.56 0.2 27);
+  --md-hl-keyword: oklch(0.55 0.2 20);
+  --md-hl-string: oklch(0.4 0.11 250);
+  --md-hl-number: oklch(0.48 0.16 255);
+  --md-hl-function: oklch(0.5 0.19 300);
+  --md-hl-type: oklch(0.55 0.15 50);
+  --md-hl-comment: oklch(0.56 0.02 250);
+  --md-hl-property: oklch(0.48 0.16 255);
+  --md-hl-tag: oklch(0.47 0.13 150);
+  --md-hl-add: oklch(0.45 0.13 150);
+  --md-hl-add-bg: oklch(0.96 0.04 150);
+  --md-hl-del: oklch(0.5 0.18 25);
+  --md-hl-del-bg: oklch(0.96 0.03 25);
+}
+
+.dark {
+  --md-bg: oklch(0.145 0 0);
+  --md-fg: oklch(0.93 0 0);
+  --md-muted: oklch(0.68 0 0);
+  --md-border: oklch(1 0 0 / 11%);
+  --md-subtle: oklch(1 0 0 / 4%);
+  --md-code-bg: oklch(0.2 0.004 260);
+  --md-code-fg: oklch(0.88 0.01 260);
+  --md-link: oklch(0.74 0.12 250);
+  --md-mark: oklch(0.45 0.09 95);
+  --md-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-7'/%3E%3C/svg%3E");
+  --md-note: oklch(0.7 0.13 255);
+  --md-tip: oklch(0.72 0.14 155);
+  --md-important: oklch(0.72 0.15 300);
+  --md-warning: oklch(0.78 0.13 75);
+  --md-caution: oklch(0.7 0.17 25);
+  --md-hl-keyword: oklch(0.73 0.16 22);
+  --md-hl-string: oklch(0.86 0.07 240);
+  --md-hl-number: oklch(0.79 0.11 245);
+  --md-hl-function: oklch(0.8 0.11 305);
+  --md-hl-type: oklch(0.8 0.12 60);
+  --md-hl-comment: oklch(0.64 0.02 250);
+  --md-hl-property: oklch(0.79 0.11 245);
+  --md-hl-tag: oklch(0.8 0.15 150);
+  --md-hl-add: oklch(0.82 0.13 150);
+  --md-hl-add-bg: oklch(0.3 0.05 150);
+  --md-hl-del: oklch(0.78 0.13 25);
+  --md-hl-del-bg: oklch(0.3 0.06 25);
+}
